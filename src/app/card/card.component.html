@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="card">
+    <div class="card-head">
+      <img src="/assets/sprites/{{indexStr}}MS.png" alt="logo" class="card-logo">
+      <img src="/assets/thumbnails/{{indexStr}}.png" alt="Bulbasaur" class="product-img">
+      <div class="product-detail">
+        <h2>{{pokemon.name.english}}</h2>
+      </div>
+      <span class="back-text">
+        {{pokemon.name.japanese}}
+      </span>
+    </div>
+    <div class="card-body">
+      <div class="product-desc">
+        <span class="product-title">
+          {{pokemon.name.english}}
+          <div *ngFor="let type of pokemon.type">
+            <span class="badge" >
+              {{type}}
+            </span>
+          </div>
+
+        </span>
+      </div>
+      <div class="product-properties">
+        <span class="product-size" *ngFor="let stats of pokemon.base | keyvalue">
+          <h4>{{stats.key + "" | uppercase}}</h4>
+          <ul class="ul-size">
+            <li><a>{{stats.value}}</a></li>
+          </ul>
+        </span>
+
+        <!-- <span class="product-price">
+          USD<b>23,453</b>
+        </span> -->
+      </div>
+    </div>
+  </div>
+</div>
